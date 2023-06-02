@@ -155,7 +155,7 @@ public class DependencyCheckToolBuilder extends Builder implements SimpleBuildSt
                 .quiet(true)
                 .pwd(workspace)
                 .join();
-        final boolean success = (exitCode == 0);
+        final boolean success = (exitCode == 0 || exitCode == 14);
         if (!success) {
             build.setResult(Result.FAILURE);
             if (stopBuild) {
